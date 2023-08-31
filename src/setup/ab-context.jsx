@@ -2,8 +2,8 @@ import { createContext, useState } from "react";
 
 const AbContext = createContext({
   tests: [],
-  totalTests: 0,
-  totalActiveTests: 0,
+  totalAb: 0,
+  totalActiveAb: 0,
   addAb: abTest => {},
   removeAb: abTestId => {},
   handleIsActiveAb: abTestId => {},

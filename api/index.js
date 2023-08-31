@@ -7,6 +7,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Middle Ware for frontend-backend communication
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -23,12 +24,11 @@ const auth = new GoogleAuth({
   scopes: [scope],
 });
 
-
+// Fetch from GA based on query
 app.get('/api', async (request, response) => {
-  // response.json({ "users": ["userOne", "userTwo", "userThree"] })
+  // response.json({ "users": ["userOne", "userTwo", "userThree"] }) // For Testing
 
   try {
-
     const metrics = JSON.parse(request.query.metrics || '[]');
     const dimensions = JSON.parse(request.query.dimensions || '[]');
     const dateRanges = JSON.parse(request.query.dateRanges || '[]')
@@ -49,7 +49,7 @@ app.get('/api', async (request, response) => {
   }
 });
 
-//localhost
+// localhost only
 const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`)

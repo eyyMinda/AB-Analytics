@@ -7,6 +7,37 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Google Cloud + GA Setup
+
+### Google Analytics Property ID:
+
+- Select your project at https://analytics.google.com
+- Go to Settings, Property Settings
+
+![Alt text](zzzGuide/propertyID.png)
+
+- You'll see the ID there
+
+### Create Google Cloud Credentials and Enable API (Google Analytics Data API)
+
+- Navigate to API's & Services, Credentials
+
+![Alt text](zzzGuide\api-credentials.png)
+
+- Create Credentials (OAuth)
+
+![Alt text](zzzGuide\createOAuth.png)
+
+- Enter url's that you're using for your application server (vite uses 5173 by default)
+
+![Alt text](zzzGuide\oauthURLs.png)
+
+#### Quickstart Guide - https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#node.js
+
+#### Generate Credentials JSON - https://developers.google.com/workspace/guides/create-credentials#create_credentials_for_a_service_account
+
+## ENV
+
 ### Create a .env file in the project root directory and populate it with the following variables:
 
 ```
@@ -30,6 +61,51 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON={"type": "service_account", "project_id": "d
 
 ```
 npm start
+```
+
+## Contents
+
+#### ExpressJs (Back-end Server) file
+
+```
+/api/index.js
+```
+
+#### Dashboard (GA data fetch example)
+
+Uses Tailwind instead
+
+```
+``Pages``
+/src/pages/main/Dashboard.jsx
+
+``Components``
+/src/components/Abs/Table.jsx
+```
+
+#### AB content
+
+Uses Style Components (Prefered)
+
+```
+``Pages``
+/src/pages/main/ActiveAb.jsx
+/src/pages/main/AllAb.jsx
+/src/pages/main/NewAb.jsx
+
+``Components``
+/src/components/Abs/AbList.jsx
+/src/components/Abs/AbItem.jsx
+/src/components/Abs/NewAbForm.jsx
+
+``Context``
+/src/setup/ab-context.js
+```
+
+#### Unused utility
+
+```
+/src/setup/google-analytics.js
 ```
 
 ## Usage
