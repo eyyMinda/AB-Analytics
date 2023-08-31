@@ -127,7 +127,7 @@ const Dashboard = () => {
         <div className="flex-col w-[20%]">
           <div className="flex items-center justify-center bg-[#77002e] h-[370px]">
             <p className="justify-center text-center text-white font-bold text-[32px] p-2">
-              Sum Total: <br /> {sumTotal}
+              Total Values: <br /> {sumTotal}
             </p>
           </div>
           <div className="flex items-center justify-center bg-white h-[370px]">

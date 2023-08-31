@@ -76,5 +76,4 @@ export const metrics = [
   "transactionsPerPurchaser",
   "userConversionRate",
   "userEngagementDuration",
-  "wauPerMau",
 ];

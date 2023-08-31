@@ -16,13 +16,7 @@ export default function Table(props) {
             </tr>
           </thead>
 
-          <tbody className={`${loading ? "relative blur-sm" : ""}`}>
-            {loading && (
-              <div className="absolute inset-0 flex items-start justify-center mt-5 z-5">
-                <div className="border-[#082f49] border-t-4 rounded-full w-12 h-12 animate-spin"></div>
-              </div>
-            )}
-
+          <tbody>
             {analyticsData &&
               analyticsData[0].rows &&
               analyticsData[0].rows.map((row, index) => {
@@ -48,6 +42,14 @@ export default function Table(props) {
             )}
           </tbody>
         </table>
+
+        <div className={`${loading ? "relative blur-sm" : ""}`}>
+          {loading && (
+            <div className="absolute inset-0 flex items-start justify-center mt-5 z-5">
+              <div className="border-[#082f49] border-t-4 rounded-full w-12 h-12 animate-spin"></div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

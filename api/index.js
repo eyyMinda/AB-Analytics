@@ -1,5 +1,5 @@
 // //localhost
-// const port = process.env.PORT || 3001
+// const port = process.env.PORT || 3000
 // app.listen(port, () => {
 //     console.log(`Server listening at http://localhost:${port}`)
 // })
@@ -15,11 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const propertyId = process.env.PROPERTY_ID;
+const scope = process.env.GA_SCOPE;
 
 const credentialsJson = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 const auth = new GoogleAuth({
   credentials: credentialsJson,
-  scopes: ["https://www.googleapis.com/auth/analytics.readonly"],
+  scopes: [scope],
 });
 
 
@@ -43,7 +44,6 @@ app.get('/api', async (request, response) => {
 
   } catch (error) {
     console.log(error);
-    console.error(error)
     response.status(500).json({ message: error })
   }
 });
