@@ -43,8 +43,11 @@ const Dashboard = () => {
             JSON.stringify([{ startDate: startDate, endDate: endDate }]),
           ],
         ]);
-
-        const response = await fetch(`/api?${queryParams}`);
+        const PORT = import.meta.env.VITE_PORT || 3000;
+        const response = await fetch(
+          `http://localhost:${PORT}/api?${queryParams}`
+        );
+        // const response = await fetch(`/api?${queryParams}`);
         const data = await response.json();
         setAnalyticsData(data);
 
@@ -71,8 +74,7 @@ const Dashboard = () => {
     <div className="p-2">
       <form className="flex items-start justify-end text-end p-2 m-2">
         <div className="p-2">
-          <label htmlFor="startDate">Start Date{"  "}</label>
-          <small>(earlier mm/dd/yy)</small>
+          <label htmlFor="startDate">Start Date:</label>
         </div>
         <input
           className="p-2 rounded-md border-double border-2 border-[#082f49]"
@@ -82,18 +84,17 @@ const Dashboard = () => {
           onChange={e => setStartDate(e.target.value)}
         />
         <div className="p-2">
-          <label htmlFor="endDate">End Date{"  "}</label>
-          <small>(later mm/dd/yy)</small>
+          <label htmlFor="endDate">End Date:</label>
         </div>
         <input
-          className="p-2 rounded-md mx-2 border-double border-2 border-[#082f49]"
+          className="p-2 rounded-md border-double border-2 border-[#082f49]"
           type="date"
           name="endDate"
           value={endDate}
           onChange={e => setEndDate(e.target.value)}
         />
         <select
-          className="p-2 rounded-md border-double border-2 border-[#082f49]"
+          className="p-2 ml-2 rounded-md border-double border-2 border-[#082f49]"
           type="select"
           name="metric"
           value={metric}

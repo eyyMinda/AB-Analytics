@@ -18,6 +18,7 @@ export default function Table(props) {
 
           <tbody>
             {analyticsData &&
+              !loading &&
               analyticsData[0].rows &&
               analyticsData[0].rows.map((row, index) => {
                 return (
@@ -38,7 +39,9 @@ export default function Table(props) {
                 );
               })}
             {analyticsData && analyticsData[0].rows.length <= 0 && (
-              <tr className="text-center justify-center">No data found</tr>
+              <tr className="text-center justify-center">
+                <td>No data found</td>
+              </tr>
             )}
           </tbody>
         </table>
