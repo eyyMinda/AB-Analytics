@@ -1,4 +1,5 @@
 // Google Analytics
+// Currently Unused (Different method)
 
 const GA_SCOPE = import.meta.env.VITE_GA_SCOPE;
 const GA_API_URL = import.meta.env.VITE_GA_API_URL;
@@ -17,7 +18,8 @@ export function signIn(scope = GA_SCOPE) {
 export function signOut() {
   return gapi.auth2.getAuthInstance().signOut().then(() => {
     setCookie('guser-loggedin', 'true', -1);
-    location.reload();}, (e) => console.error(e));
+    location.reload();
+  }, (e) => console.error(e));
 }
 
 export function loadClient(apiPath = GA_API_URL) {
@@ -42,14 +44,14 @@ export function isSignedIn() {
 export function setCookie(cname = 'guser-loggedin', cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
+  let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 export function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
+  for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);

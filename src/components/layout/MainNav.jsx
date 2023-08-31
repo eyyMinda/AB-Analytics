@@ -13,12 +13,15 @@ function MainNav() {
 
       <ul>
         <li>
-          <Link to="/">All A/B</Link>
+          <Link to="/">Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/all-abs">All A/B</Link>
         </li>
         <li>
           <Link to="/active-abs">
             Active A/B
-            <span className={css.badge}>{absCtx.totalActiveAbs}</span>
+            <span className={css.badge}>{absCtx.totalActiveAbs || 0}</span>
           </Link>
         </li>
         <li>

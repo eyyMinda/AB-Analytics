@@ -5,8 +5,7 @@ import { useRef } from "react";
 function NewAbForm(props) {
   const inputs = {
     title: useRef(),
-    image: useRef(),
-    address: useRef(),
+    // image: useRef(),
     description: useRef(),
   };
 
@@ -27,15 +26,10 @@ function NewAbForm(props) {
           <input type="text" required id="title" ref={inputs.title} />
         </div>
 
-        <div className={css.control}>
+        {/* <div className={css.control}>
           <label htmlFor="image">A/B Image</label>
           <input type="url" required id="image" ref={inputs.image} />
-        </div>
-
-        <div className={css.control}>
-          <label htmlFor="address">A/B Address</label>
-          <input type="text" required id="address" ref={inputs.address} />
-        </div>
+        </div> */}
 
         <div className={css.control}>
           <label htmlFor="description">Ab Description</label>

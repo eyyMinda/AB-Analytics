@@ -9,9 +9,8 @@ function AbList(props) {
           <AbItem
             key={ab.id}
             id={ab.id}
-            image={ab.image}
+            // image={ab.image}
             title={ab.title}
-            address={ab.address}
             description={ab.description}
           />
         );
