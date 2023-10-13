@@ -54,7 +54,7 @@ GOOGLE_APPLICATION_CREDENTIALS_JSON=YOUR_SERVICE_ACCOUNT_KEY_JSON
 Replace YOUR_GOOGLE_ANALYTICS_PROPERTY_ID with your Google Analytics property ID, and YOUR_SERVICE_ACCOUNT_KEY_JSON with the contents of your service account key JSON file. Additional VITE_PORT is needed for frontend to contact backend.
 ```
 
-#### E.g:
+#### E.g.:
 
 ```
 PROPERTY_ID=12345678
