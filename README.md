@@ -22,15 +22,15 @@ Currently, two official plugins are available:
 
 - Navigate to API's & Services, Credentials
 
-![Alt text](zzzGuide\api-credentials.png)
+![Alt text](zzzGuide/api-credentials.png)
 
 - Create Credentials (OAuth)
 
-![Alt text](zzzGuide\createOAuth.png)
+![Alt text](zzzGuide/createOAuth.png)
 
 - Enter url's that you're using for your application server (vite uses 5173 by default)
 
-![Alt text](zzzGuide\oauthURLs.png)
+![Alt text](zzzGuide/oauthURLs.png)
 
 #### Quickstart Guide - https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#node.js
 
