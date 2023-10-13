@@ -7,16 +7,12 @@ const Dashboard = () => {
   const [analyticsData, setAnalyticsData] = useState(null);
 
   const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
+  today.setDate(today.getDate() - 30);
 
-  const initialEndDate = `${year}-${month}-${day}`;
-  const initalStartDate = `${year}-${month}-${String(
-    today.getDate() - 30
-  ).padStart(2, "0")}`;
+  const initialStartDate = today.toISOString().split("T")[0]; // Format: 'YYYY-MM-DD'
+  const initialEndDate = new Date().toISOString().split("T")[0]; // Current date
 
-  const [startDate, setStartDate] = useState(initalStartDate);
+  const [startDate, setStartDate] = useState(initialStartDate);
   const [endDate, setEndDate] = useState(initialEndDate);
   const [metric, setMetric] = useState("activeUsers");
 

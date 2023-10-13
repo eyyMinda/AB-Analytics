@@ -1,11 +1,17 @@
 # React + Vite + Express
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal setup for a custom A/B testing application using Google Cloud and data from Google Analytics.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview](public/Preview.png)
+
+## Usage
+
+- Select a start date, end date, and metric from the form.
+- Click the "Fetch" button to retrieve data from Google Analytics.
+- The table will display the data for the selected date range and metric, grouped by country.
+- The sum total of the chosen metric is displayed in a separate box.
 
 ## Google Cloud + GA Setup
 
@@ -14,7 +20,7 @@ Currently, two official plugins are available:
 - Select your project at https://analytics.google.com
 - Go to Settings, Property Settings
 
-![Alt text](zzzGuide/propertyID.png)
+![property-id](zzzGuide/propertyID.png)
 
 - You'll see the ID there
 
@@ -22,15 +28,15 @@ Currently, two official plugins are available:
 
 - Navigate to API's & Services, Credentials
 
-![Alt text](zzzGuide\api-credentials.png)
+![api-credentials](zzzGuide/api-credentials.png)
 
 - Create Credentials (OAuth)
 
-![Alt text](zzzGuide\createOAuth.png)
+![create-credentials](zzzGuide/createOAuth.png)
 
 - Enter url's that you're using for your application server (vite uses 5173 by default)
 
-![Alt text](zzzGuide\oauthURLs.png)
+![urls](zzzGuide/oauthURLs.png)
 
 #### Quickstart Guide - https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries#node.js
 
@@ -107,10 +113,3 @@ Uses Style Components (Prefered)
 ```
 /src/setup/google-analytics.js
 ```
-
-## Usage
-
-- Select a start date, end date, and metric from the form.
-- Click the "Fetch" button to retrieve data from Google Analytics.
-- The table will display the data for the selected date range and metric, grouped by country.
-- The sum total of the chosen metric is displayed in a separate box.
