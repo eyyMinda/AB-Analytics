@@ -37,8 +37,7 @@ export function runReport(propertyId, query, cb = function (res) { console.log(r
 }
 
 export function isSignedIn() {
-  if (getCookie('guser-loggedin') === 'true') return true;
-  return false;
+  return getCookie('guser-loggedin') === 'true';
 }
 
 export function setCookie(cname = 'guser-loggedin', cvalue, exdays) {
